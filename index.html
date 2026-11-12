@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌷 قصة بر الوالدين – سر السعادة والبركة 🌷</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #d81b60;
+            --primary-light: #fce4ec;
+            --secondary: #00acc1;
+            --secondary-light: #e0f7fa;
+            --accent: #ffb300;
+            --purple-bg: #f3e5f5;
+            --purple-dark: #7b1fa2;
+            --text-dark: #37474f;
+            --bg-gradient: linear-gradient(135deg, #fce4ec 0%, #e0f7fa 50%, #f3e5f5 100%);
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --radius: 24px;
+        }
+
+        [data-theme="dark"] {
+            --primary: #ff4081;
+            --primary-light: #311b29;
+            --secondary: #26c6da;
+            --secondary-light: #00363a;
+            --accent: #ffd54f;
+            --purple-bg: #2a1b3d;
+            --purple-dark: #ce93d8;
+            --text-dark: #eceff1;
+            --bg-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            --card-bg: rgba(30, 30, 46, 0.95);
+            --shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', 'Tajawal', sans-serif;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 25px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            position: relative;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        /* Header & Controls */
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 3px dashed var(--primary);
+            padding-bottom: 15px;
+        }
+
+        header h1 {
+            color: var(--primary);
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .top-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+            background: rgba(0,0,0,0.03);
+            padding: 10px 15px;
+            border-radius: 15px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        button.secondary-btn {
+            background: var(--secondary);
+        }
+
+        button.purple-btn {
+            background: var(--purple-dark);
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .tab-btn {
+            background: var(--primary-light);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Sections */
+        .section-content {
+            display: none;
+        }
+        .section-content.active {
+            display: block;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Story Scene Card */
+        .scene-card {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 3px solid var(--secondary-light);
+        }
+
+        .scene-img-container {
+            width: 100%;
+            height: 280px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        .scene-text-box {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .dual-text {
+            font-size: 1rem;
+            color: #666;
+            background: rgba(0,0,0,0.02);
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 8px;
+            direction: ltr;
+            text-align: left;
+            display: none;
+        }
+        .show-dual .dual-text {
+            display: block;
+        }
+
+        .story-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        /* Audio & Translation Controls */
+        .audio-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--purple-bg);
+            padding: 10px 15px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* Quran & Hadith */
+        .islamic-card {
+            background: linear-gradient(135deg, #fff9c4, #fff);
+            border: 2px solid var(--accent);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(255, 179, 0, 0.15);
+        }
+        .islamic-card h3 {
+            color: #f57f17;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        .arabic-verse {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 10px 0;
+            line-height: 2;
+        }
+
+        /* Activities & Quizzes */
+        .quiz-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            border: 2px solid #e0e0e0;
+        }
+        .quiz-options {
+            display: grid;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .quiz-opt {
+            background: #f5f5f5;
+            border: 2px solid #ccc;
+            padding: 10px 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            text-align: right;
+        }
+        .quiz-opt:hover { background: #e0f7fa; border-color: var(--secondary); }
+        .quiz-opt.correct { background: #c8e6c9 !important; border-color: #4caf50 !important; color: #1b5e20; }
+        .quiz-opt.wrong { background: #ffcdd2 !important; border-color: #f44336 !important; color: #b71c1c; }
+
+        /* Challenges & Tasks */
+        .task-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: #fff;
+            padding: 12px 18px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            border: 2px solid #eee;
+        }
+        .task-item input[type="checkbox"] {
+            width: 24px;
+            height: 24px;
+            accent-color: var(--primary);
+            cursor: pointer;
+        }
+        .task-item.completed {
+            background: #e8f5e9;
+            border-color: #a5d6a7;
+            text-decoration: line-through;
+            color: #2e7d32;
+        }
+
+        /* Certificate */
+        .certificate-preview {
+            background: linear-gradient(135deg, #fff, #fff9c4);
+            border: 8px double var(--primary);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .certificate-preview h2 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        .certificate-preview input {
+            border: none;
+            border-bottom: 2px dashed var(--primary);
+            background: transparent;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--purple-dark);
+            width: 60%;
+            margin: 15px 0;
+            outline: none;
+        }
+
+        /* Responsive Footer & Share */
+        .share-box {
+            background: var(--secondary-light);
+            border-radius: 15px;
+            padding: 15px;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        @media print {
+            body * { visibility: hidden; }
+            .certificate-preview, .certificate-preview * { visibility: visible; }
+            .certificate-preview { position: absolute; left: 0; top: 0; width: 100%; border: none; box-shadow: none; }
+            .no-print { display: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>🌷 قصة بر الوالدين – سر السعادة والبركة 🌷</h1>
+            <p>قصة تفاعلية ممتعة للأطفال من 5 إلى 10 سنوات</p>
+        </header>
+
+        <!-- Top Global Controls -->
+        <div class="top-controls no-print">
+            <div class="btn-group">
+                <button onclick="toggleDarkMode()" class="purple-btn"><i class="fa-solid fa-moon"></i> الوضع</button>
+                <button onclick="toggleLanguageMode()" class="secondary-btn"><i class="fa-solid fa-language"></i> <span id="lang-btn-text">English & Dual</span></button>
+            </div>
+            <div class="btn-group">
+                <button onclick="toggleFullScreen()"><i class="fa-solid fa-expand"></i> ملء الشاشة</button>
+                <button onclick="window.print()" class="secondary-btn"><i class="fa-solid fa-print"></i> طباعة الشهادة</button>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs no-print">
+            <button class="tab-btn active" onclick="switchTab('story')"><i class="fa-solid fa-book-open"></i> قصة أحمد</button>
+            <button class="tab-btn" onclick="switchTab('islamic')"><i class="fa-solid fa-quran"></i> آيات وأحاديث</button>
+            <button class="tab-btn" onclick="switchTab('activities')"><i class="fa-solid fa-puzzle-piece"></i> الأنشطة والألعاب</button>
+            <button class="tab-btn" onclick="switchTab('challenge')"><i class="fa-solid fa-award"></i> تحدي الطفل البار</button>
+            <button class="tab-btn" onclick="switchTab('share')"><i class="fa-solid fa-share-nodes"></i> النشر والمشاركة</button>
+        </div>
+
+        <!-- SECTION 1: STORY -->
+        <div id="story-section" class="section-content active">
+            <div class="audio-bar">
+                <button onclick="playCurrentSceneAudio()"><i class="fa-solid fa-volume-high"></i> استمع للمشهد</button>
+                <button onclick="pauseAudio()" class="secondary-btn"><i class="fa-solid fa-pause"></i> إيقاف مؤقت</button>
+                <button onclick="stopAudio()" style="background:#f44336;"><i class="fa-solid fa-stop"></i> إيقاف</button>
+                <span id="audio-status" style="font-weight:bold; color:var(--primary);">الراوي جاهز 🎧</span>
+            </div>
+
+            <div class="scene-card">
+                <div class="scene-img-container" id="scene-illustration">
+                    <!-- SVG Scene Illustration -->
+                </div>
+                <h3 id="scene-title" style="color:var(--primary); margin-bottom:10px;">المشهد الأول: أحمد واللعبة المثيرة</h3>
+                <div class="scene-text-box" id="scene-text">
+                    كان أحمد طفلاً ذكياً ونشيطاً، يحب اللعب كثيراً وقضاء أوقات ممتعة مع ألعابه الإلكترونية. وفي أحد الأيام الممشقة بالحيوية، كانت أمه الحبيبة تجهز طاولة الطعام وطلبت منه بكل حب: "يا أحمد، هل تستطيع مساعدتي في حمل الأطباق الصغيرة؟".
+                </div>
+                <div class="dual-text" id="scene-dual-text">
+                    Ahmad was a smart and energetic boy who loved playing with his games. One day, his loving mother asked him: "Ahmad, could you please help me carry the small plates?"
+                </div>
+
+                <div class="story-navigation">
+                    <button onclick="prevScene()" id="prev-btn" class="secondary-btn"><i class="fa-solid fa-arrow-right"></i> المشهد السابق</button>
+                    <span id="scene-counter" style="font-weight:bold; align-self:center;">1 / 5</span>
+                    <button onclick="nextScene()" id="next-btn"><i class="fa-solid fa-arrow-left"></i> المشهد التالي</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: ISLAMIC VALUES -->
+        <div id="islamic-section" class="section-content">
+            <div class="islamic-card">
+                <h3>📖 من القرآن الكريم - سورة الإسراء (آية 23)</h3>
+                <div class="arabic-verse">﴿ وَقَضَىٰ رَبُّكَ أَلَّا تَعْبُدُوۡا إِلَّا إِيَّاهُ وَبِالْوَالِدَيْنِ إِحْسَانًا ۚ إِمَّا يَبْلُغَنَّ عِندَكَ الْكِبَرَ أَحَدُهُمَا أَوْ كِلَاهُمَا فَلَا تَقُل لَّهُمَا أُفٍّ وَلَا تَنْهَرْهُمَا وَقُل لَّهُمَا قَوْلًا كَرِيمًا ﴾</div>
+                <p><strong>المعنى المبسط للأطفال:</strong> أمرنا الله سبحانه وتعالى ألا نعبد إلا إياه، وأوصانا خيراً بالأم والأب، وأن نكلمهما دائماً بكلام جميل وطيب.</p>
+                <button onclick="speakText('وقضى ربك ألا تعبدوا إلا إياه وبالوالدين إحسانا')" class="secondary-btn" style="margin-top:10px;"><i class="fa-solid fa-volume-high"></i> استمع للآية</button>
+            </div>
+
+            <div class="islamic-card">
+                <h3>📖 من القرآن الكريم - سورة لقمان (آية 14)</h3>
+                <div class="arabic-verse">﴿ وَوَصَّيْنَا الْإِنسَانَ بِوَالِدَيْهِ حَمَلَتْهُ أُمُّهُ وَهْنًا عَلَىٰ وَهْنٍ وَفِصَالُهُ فِي عَامَيْنِ أَنِ اشْكُرْ لِي وَلِوَالِدَيْكَ إِلَيَّ الْصَّمِيرُ ﴾</div>
+                <p><strong>المعنى المبسط للأطفال:</strong> الله يذكرنا بتعب الأم الشديد أثناء الحمل والتربية، ويأمرنا أن نشكره ونشكر والدينا.</p>
+                <button onclick="speakText('وووصينا الإنسان بوالديه حملته أمه وهناً على وهن')" class="secondary-btn" style="margin-top:10px;"><i class="fa-solid fa-volume-high"></i> استمع للآية</button>
+            </div>
+
+            <div class="islamic-card" style="background: linear-gradient(135deg, #e0f7fa, #fff);">
+                <h3 style="color:var(--secondary);">🌟 من هدي النبي محمد ﷺ</h3>
+                <div class="arabic-verse" style="font-size:1.3rem;">« رِضَا الرَّبِّ فِي رِضَا الْوَالِدِ، وَسَخَطُ الرَّبِّ فِي سَخَطِ الْوَالِدِ »</div>
+                <p><strong>المعنى المبسط للأطفال:</strong> رضا الله سبحانه وتعالى مرتبط برضا أمك وأبيك عنك، وبرهما يفتح أبواب البركة والسعادة في حياتنا.</p>
+                <button onclick="speakText('رضا الرب في رضا الوالد وسخط الرب في سخط الوالد')" class="secondary-btn" style="margin-top:10px;"><i class="fa-solid fa-volume-high"></i> استمع للحديث</button>
+            </div>
+        </div>
+
+        <!-- SECTION 3: ACTIVITIES -->
+        <div id="activities-section" class="section-content">
+            <h2 style="color:var(--primary); margin-bottom:15px; text-align:center;">🎮 الأنشطة والمسابقات التفاعلية</h2>
+            
+            <div class="quiz-box">
+                <h3>1. اختر الإجابة الصحيحة: عندما طلبت الأم من أحمد المساعدة، ماذا فعل في البداية؟</h3>
+                <div class="quiz-options">
+                    <div class="quiz-opt" onclick="checkAnswer(this, false, 1)">أ) هرع لمساعدتها فوراً وبكل نشاط</div>
+                    <div class="quiz-opt" onclick="checkAnswer(this, true, 1)">ب) انشغل باللعب ولم يستجب في البداية</div>
+                    <div class="quiz-opt" onclick="checkAnswer(this, false, 1)">ج) ذهب للنوم خارج البيت</div>
+                </div>
+                <div id="feedback-1" style="margin-top:8px; font-weight:bold;"></div>
+            </div>
+
+            <div class="quiz-box">
+                <h3>2. صح أم خطأ: رضا الله سبحانه وتعالى يتحقق برضا الوالدين وطاعتهما في المعروف.</h3>
+                <div class="quiz-options">
+                    <div class="quiz-opt" onclick="checkAnswer(this, true, 2)">✅ صح</div>
+                    <div class="quiz-opt" onclick="checkAnswer(this, false, 2)">❌ خطأ</div>
+                </div>
+                <div id="feedback-2" style="margin-top:8px; font-weight:bold;"></div>
+            </div>
+
+            <div class="quiz-box">
+                <h3>3. ماذا تفعل لو كنت مكان أحمد وطلبت منك أمك المساعدة؟</h3>
+                <div class="quiz-options">
+                    <div class="quiz-opt" onclick="checkAnswer(this, true, 3)">أ) أترك ألعابي وألبي نداءها فوراً بابتسامة ووجه طليق</div>
+                    <div class="quiz-opt" onclick="checkAnswer.alt(this, false, 3)">ب) أتجاهلها وأكمل لعبتي المفضلة</div>
+                </div>
+                <div id="feedback-3" style="margin-top:8px; font-weight:bold;"></div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: CHALLENGE -->
+        <div id="challenge-section" class="section-content">
+            <h2 style="color:var(--primary); margin-bottom:10px; text-align:center;">🌟 لوحة شرف الطفل البار</h2>
+            <p style="text-align:center; margin-bottom:20px; color:#666;">قم بتأدية هذه المهام اليومية واكسب رضا الله ووالديك ونجوماً ذهبية!</p>
+            
+            <div class="task-item" onclick="toggleTask(this)">
+                <input type="checkbox" onchange="updateScore()">
+                <div><strong>أقول لأمي وأبي كلمات طيبة</strong> (مثل: جزاكم الله خيراً، أحبكما يا أمه ويا أبي).</div>
+            </div>
+            <div class="task-item" onclick="toggleTask(this)">
+                <input type="checkbox" onchange="updateScore()">
+                <div><strong>أساعدهما في ترتيب المنزل</strong> وحمل الأغراض الخفيفة.</div>
+            </div>
+            <div class="task-item" onclick="toggleTask(this)">
+                <input type="checkbox" onchange="updateScore()">
+                <div><strong>أستمع إليهما باهتمام ودون مقاطعة</strong> وبأدب جم.</div>
+            </div>
+            <div class="task-item" onclick="toggleTask(this)">
+                <input type="checkbox" onchange="updateScore()">
+                <div><strong>أدعو لهما دائماً في صلاتي</strong> (رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا).</div>
+            </div>
+            <div class="task-item" onclick="toggleTask(this)">
+                <input type="checkbox" onchange="updateScore()">
+                <div><strong>أشكرهما على كل ما يقدمانه لي</strong> من رعاية واهتمام.</div>
+            </div>
+
+            <div style="text-align:center; margin-top:20px; font-size:1.2rem; font-weight:bold; color:var(--secondary);">
+                النجوم المكتسبة: <span id="score-stars">⭐ 0</span> / 5
+            </div>
+        </div>
+
+        <!-- SECTION 5: SHARE & DEPLOYMENT GUIDE -->
+        <div id="share-section" class="section-content">
+            <h2 style="color:var(--primary); margin-bottom:15px; text-align:center;">🌐 نشر ومشاركة التطبيق</h2>
+            
+            <!-- Certificate Preview -->
+            <div class="certificate-preview" id="certificate-box">
+                <i class="fa-solid fa-award" style="font-size: 3rem; color: var(--primary);"></i>
+                <h2>شهادة تقدير وتفوق</h2>
+                <p>تمنح هذه الشهادة بكل فخر واعتزاز إلى البطل / البطلة:</p>
+                <input type="text" id="child-name-input" value="البطل الصغير" placeholder="اكتب اسم الطفل هنا">
+                <p style="margin-top:10px;">لكونه طفلاً باراً بوالديه، ومطيعاً لهما، ومحافظاً على نشر الحب والبركة في أسرته.</p>
+                <div style="display:flex; justify-content:space-between; margin-top:30px; font-weight:bold; padding:0 20px;">
+                    <div>التوقيع: إدارة التطبيق التعليمي</div>
+                    <div>التاريخ: <span id="cert-date"></span></div>
+                </div>
+            </div>
+            
+            <div style="text-align:center; margin-top:20px;">
+                <button onclick="window.print()" class="purple-btn"><i class="fa-solid fa-print"></i> طباعة الشهادة الرسمية</button>
+            </div>
+
+            <div class="share-box" style="margin-top:30px;">
+                <h3 style="color:var(--secondary); margin-bottom:10px;"><i class="fa-solid fa-share-nodes"></i> كيفية مشاركة التطبيق عبر WhatsApp و Google Meet</h3>
+                <p style="line-height:1.6; margin-bottom:10px;">
+                    1. قم برفع هذا الملف (index.html) مجاناً على <strong>GitHub Pages</strong> أو <strong>Netlify</strong> أو <strong>Google Sites</strong>.<br>
+                    2. انسخ الرابط الناتج وشاركه فوراً مع أصدقائك عبر <strong>WhatsApp</strong>.<br>
+                    3. يمكنك مشاركة شاشتك مباشرة في جلسة <strong>Google Meet</strong> لتقرأ القصة مع أطفالك أو تلاميذك وتلعبوا الأنشطة معاً!
+                </p>
+                <button onclick="shareOnWhatsApp()" class="secondary-btn" style="background:#25D366; margin-top:5px;"><i class="fa-brands fa-whatsapp"></i> مشاركة عبر واتساب</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // --- Story Data & Scenes ---
+        const scenes = [
+            {
+                title: "المشهد الأول: أحمد واللعبة المثيرة",
+                text: "كان أحمد طفلاً ذكياً ونشيطاً، يحب اللعب كثيراً وقضاء أوقات ممتعة مع ألعابه الإلكترونية. وفي أحد الأيام الممشقة بالحيوية، كانت أمه الحبيبة تجهز طاولة الطعام وطلبت منه بكل حب: \"يا أحمد، هل تستطيع مساعدتي في حمل الأطباق الصغيرة؟\".",
+                dualText: "Ahmad was a smart and energetic boy who loved playing games. One day, his loving mother asked him: 'Ahmad, could you please help me carry the small plates?'",
+                audio: "كان أحمد طفلاً ذكياً ونشيطاً يحب اللعب. طلبت منه أمه المساعدة في حمل الأطباق، لكنه انشغل بلعبته.",
+                svg: `<svg width="220" height="180" viewBox="0 0 200 160">
+                    <rect width="200" height="160" fill="#fce4ec" rx="15"/>
+                    <circle cx="100" cy="60" r="25" fill="#ffccbc"/>
+                    <path d="M75 95 Q100 120 125 95 L130 140 L70 140 Z" fill="#42a5f5"/>
+                    <rect x="50" y="100" width="30" height="20" rx="5" fill="#ab47bc"/>
+                </svg>`
+            },
+            {
+                title: "المشهد الثاني: التأخر والانشغال",
+                text: "انشغل أحمد بلعبته الممتعة وقال بصوت منخفض: \"حسناً يا أمي بعد قليل\"، وبقي منسجماً مع الألعاب ناسياً طلب أمه التي انتظرت طويلاً وبذلت جهداً كبيراً وحدها في المطبخ.",
+                dualText: "Ahmad was engrossed in his game and said: 'Okay Mom, in a bit', remaining absorbed and forgetting her request.",
+                audio: "انشغل أحمد بلعبته وقال بعد قليل، وبقي منسجماً ناسياً طلب أمه التي انتظرت طويلاً.",
+                svg: `<svg width="220" height="180" viewBox="0 0 200 160">
+                    <rect width="200" height="160" fill="#e0f7fa" rx="15"/>
+                    <circle cx="110" cy="65" r="25" fill="#ffccbc"/>
+                    <rect x="70" y="95" width="80" height="40" rx="8" fill="#26a69a"/>
+                    <rect x="85" y="105" width="50" height="20" fill="#fff" rx="3"/>
+                </svg>`
+            },
+            {
+                title: "المشهد الثالث: الموقف المؤثر ووعي أحمد",
+                text: "رأى أحمد أمه الحبيبة وهي متعبة وتحمل الأطباق الثقيلة بمفردها وظهرت على وجهها علامات التعب والإرهاق، فتذكر قول الله تعالى وحنان والديه عليه طوال حياتهما، وشعر بالندم العميق.",
+                dualText: "Ahmad saw his dear mother looking tired while carrying heavy dishes alone. He felt deep regret and remembered her kindness.",
+                audio: "رأى أحمد أمه متعبة تحمل الأطباق الثقيلة وحدها، فشعر بالندم العميق وتذكر فضلها.",
+                svg: `<svg width="220" height="180" viewBox="0 0 200 160">
+                    <rect width="200" height="160" fill="#f3e5f5" rx="15"/>
+                    <circle cx="60" cy="70" r="22" fill="#ffccbc"/>
+                    <circle cx="140" cy="70" r="22" fill="#ffccbc"/>
+                    <path d="M90 110 L110 110 L120 140 L80 140 Z" fill="#ab47bc"/>
+                </svg>`
+            },
+            {
+                title: "المشهد الرابع: الاعتذار والمساعدة الفورية",
+                text: "أسرع أحمد نحو أمه الحبيبة، وقبل رأسها ويدها باحترام قائلاً: \"أنا آسف جداً يا أمي الحبيبة، لقد قصرت في تلبية طلبك، أنا جاهز لمساعدتك الآن وفورا!\" فابتسمت الأم وسعدت كثيراً.",
+                dualText: "Ahmad rushed to his mother, kissed her head and hand, saying: 'I'm so sorry Mom, I'm ready to help you right now!'",
+                audio: "أسرع أحمد وقبل رأس أمه معتذراً، وبدأ بمساعدتها بكل نشاط وحب.",
+                svg: `<svg width="220" height="180" viewBox="0 0 200 160">
+                    <rect width="200" height="160" fill="#e8f5e9" rx="15"/>
+                    <circle cx="80" cy="65" r="22" fill="#ffccbc"/>
+                    <circle cx="125" cy="65" r="22" fill="#ffccbc"/>
+                    <path d="M70 140 L130 140 L120 100 L80 100 Z" fill="#66bb6a"/>
+                </svg>`
+            },
+            {
+                title: "المشهد الخامس: النهاية السعيدة والبركة",
+                text: "سعد الأبوان كثيراً بأخلاق أحمد وتغيره الجميل، وعمت البركة والفرح أرجاء البيت. وأشرقت أسرة أحمد بالسعادة ورضا الله سبحانه وتعالى الذي يبارك في حياة البارين بوالديهم.",
+                dualText: "The parents were overjoyed with Ahmad's good manners. Happiness and blessings filled their home, blessed by God.",
+                audio: "سعد الأبوان بأخلاق أحمد، وعمت البركة والسرور البيت كله بنيل رضا الله ورضا الوالدين.",
+                svg: `<svg width="220" height="180" viewBox="0 0 200 160">
+                    <rect width="200" height="160" fill="#fff9c4" rx="15"/>
+                    <circle cx="70" cy="60" r="20" fill="#ffccbc"/>
+                    <circle cx="100" cy="50" r="22" fill="#ffccbc"/>
+                    <circle cx="130" cy="60" r="20" fill="#ffccbc"/>
+                    <path d="M50 140 L150 140 L130 100 L70 100 Z" fill="#ffa726"/>
+                </svg>`
+            }
+        ];
+
+        let currentSceneIndex = 0;
+        let isDualMode = false;
+        let isDark = false;
+
+        function renderScene() {
+            const scene = scenes[currentSceneIndex];
+            document.getElementById("scene-title").innerText = scene.title;
+            document.getElementById("scene-text").innerText = scene.text;
+            document.getElementById("scene-dual-text").innerText = scene.dualText;
+            document.getElementById("scene-illustration").innerHTML = scene.svg;
+            document.getElementById("scene-counter").innerText = `${currentSceneIndex + 1} / ${scenes.length}`;
+            
+            document.getElementById("prev-btn").disabled = currentSceneIndex === 0;
+            document.getElementById("next-btn").disabled = currentSceneIndex === scenes.length - 1;
+        }
+
+        function nextScene() {
+            if (currentSceneIndex < scenes.length - 1) {
+                currentSceneIndex++;
+                renderScene();
+                stopAudio();
+            }
+        }
+
+        function prevScene() {
+            if (currentSceneIndex > 0) {
+                currentSceneIndex--;
+                renderScene();
+                stopAudio();
+            }
+        }
+
+        // --- Audio Speech Synthesis Engine ---
+        function playCurrentSceneAudio() {
+            const scene = scenes[currentSceneIndex];
+            speakText(scene.audio);
+        }
+
+        function speakText(text, lang = 'ar-SA') {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = lang;
+                utterance.rate = 0.9; // Normal child-friendly speed
+                utterance.pitch = 1.1;
+                
+                document.getElementById("audio-status").innerText = "جاري القراءة 🎧...";
+                utterance.onend = () => {
+                    document.getElementById("audio-status").innerText = "تم الانتهاء ✅";
+                };
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert("خاصية القراءة الصوتية غير متوفرة في متصفحك الحالي.");
+            }
+        }
+
+        function pauseAudio() {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.pause();
+                document.getElementById("audio-status").innerText = "مؤقت ⏸️";
+            }
+        }
+
+        function stopAudio() {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                document.getElementById("audio-status").innerText = "الراوي جاهز 🎧";
+            }
+        }
+
+        // --- Navigation Tabs ---
+        function switchTab(tabId) {
+            document.querySelectorAll('.section-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            
+            document.getElementById(`${tabId}-section`).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        // --- Dual Language & Theme Toggles ---
+        function toggleLanguageMode() {
+            isDualMode = !isDualMode;
+            const container = document.querySelector('.container');
+            if (isDualMode) {
+                container.classList.add('show-dual');
+                document.getElementById("lang-btn-text").innerText = "العربية فقط";
+            } else {
+                container.classList.remove('show-dual');
+                document.getElementById("lang-btn-text").innerText = "English & Dual";
+            }
+        }
+
+        function toggleDarkMode() {
+            isDark = !isDark;
+            document.body.setAttribute("data-theme", isDark ? "dark" : "light");
+        }
+
+        function toggleFullScreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+
+        // --- Quizzes & Activities ---
+        function checkAnswer(element, isCorrect, qNum) {
+            const parent = element.parentElement;
+            parent.querySelectorAll('.quiz-opt').forEach(opt => {
+                opt.style.pointerEvents = 'none';
+                if(opt === element) {
+                    opt.classList.add(isCorrect ? 'correct' : 'wrong');
+                }
+            });
+            const feedback = document.getElementById(`feedback-${qNum}`);
+            if(isCorrect) {
+                feedback.innerHTML = "أحسنت! 🌟 إجابة موفقة وصحيحة.";
+                feedback.style.color = "#4caf50";
+            } else {
+                feedback.innerHTML = "حاول مرة أخرى! الإجابة الصحيحة هي الاختيار الآخر.";
+                feedback.style.color = "#f44336";
+            }
+        }
+
+        // --- Challenge Tasks ---
+        function toggleTask(item) {
+            const checkbox = item.querySelector('input');
+            checkbox.checked = !checkbox.checked;
+            if(checkbox.checked) {
+                item.classList.add('completed');
+            } else {
+                item.classList.remove('completed');
+            }
+            updateScore();
+        }
+
+        function updateScore() {
+            const checkedCount = document.querySelectorAll('.task-item input[type="checkbox"]:checked').length;
+            document.getElementById("score-stars").innerText = `⭐ ${checkedCount}`;
+        }
+
+        // --- Share & WhatsApp ---
+        function shareOnWhatsApp() {
+            const text = encodeURIComponent("مرحباً! أنشأت تطبيقاً تعليمياً رائعاً للأطفال بعنوان: 🌷 قصة بر الوالدين – سر السعادة والبركة 🌷. تصفحه واستمتع بالقصة والأنشطة!");
+            window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
+        }
+
+        // Init Date
+        document.getElementById("cert-date").innerText = new Date().toLocaleDateString('ar-EG');
+        renderScene();
+    </script>
+</body>
+</html>
